@@ -30,7 +30,7 @@ class ChatViewController: UIViewController , UITableViewDataSource,UITableViewDe
     func onTimer() {
         // Add code to be run periodically
         let query = PFQuery(className:"Messagejnx")
-        query.order(byAscending: "createdAt")
+        query.order(byDescending: "createdAt")
         query.findObjectsInBackground { (messages: [PFObject]?, error: Error?) in
             if error == nil{
                 self.Messages = messages!
